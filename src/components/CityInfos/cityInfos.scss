@@ -1,0 +1,53 @@
+.cityInfos {
+  width: 65vw;
+  height: 100vh;
+  background-color: #e3f6fe;
+  margin-right: 1em;
+  padding: 1.5em;
+  &--title {
+    text-transform: capitalize;
+    font-weight: 700;
+    margin-bottom: 0.3em;
+    & span {
+      font-weight: 200;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+  @media screen and (min-width: 601px) {
+    display: block;
+  }
+}
+.hero {
+  height: calc(100vh / 4);
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  border-radius: 1em;
+  &--text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // backgroundColor: blue,
+  }
+  &--title {
+    font-size: 3em;
+    color: white;
+  }
+  &--subtitle {
+    font-size: 3em;
+    color: white;
+  }
+}
+.map {
+  border-radius: 1em;
+  height: calc(100vh / 2);
+  margin-top: 1em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

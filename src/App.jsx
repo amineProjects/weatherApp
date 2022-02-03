@@ -1,10 +1,11 @@
-import { useState } from "react";
 import "./App.scss";
+
+import CityInfos from "@/components/CityInfos";
 
 function App() {
   return (
     <div className="App">
-      <h1>Weather Forcast</h1>
+      <CityInfos />
     </div>
   );
 }
