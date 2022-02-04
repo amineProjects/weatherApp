@@ -17,10 +17,7 @@ const WeatherIcon = ({ statu = "Clear" }) => {
   }, []);
   useEffect(() => {
     if (icon) {
-      icon.setType(
-        AnimatedWeatherTypes[statu],
-        AnimatedWeatherTimes[hour <= 12 ? "Day" : "Night"]
-      );
+      icon.setType(AnimatedWeatherTypes[statu], AnimatedWeatherTimes.Day);
     }
   }, [statu, hour]);
 

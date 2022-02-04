@@ -3,13 +3,13 @@ import WeatherIcon from "./WeatherIcon";
 import "./weatherInfos.scss";
 
 const weatherPr = [
-  { day: "sunday", weather: "sunny", temp: "31" },
-  { day: "monday", weather: "clouday", temp: "31" },
-  { day: "tuesdya", weather: "sunny", temp: "31" },
-  { day: "wednesday", weather: "sunny", temp: "31" },
-  { day: "thursday", weather: "sunny", temp: "31" },
-  { day: "friday", weather: "sunny", temp: "31" },
-  { day: "saturday", weather: "sunny", temp: "31" },
+  { day: "sunday", weather: "Clear", temp: "31" },
+  { day: "monday", weather: "Cloudy", temp: "31" },
+  { day: "tuesdya", weather: "Rain", temp: "31" },
+  { day: "wednesday", weather: "Drizzle", temp: "31" },
+  { day: "thursday", weather: "Overcast", temp: "31" },
+  { day: "friday", weather: "HeavyRain", temp: "31" },
+  { day: "saturday", weather: "Clear", temp: "31" },
 ];
 
 const WeatherInfos = ({
@@ -31,9 +31,9 @@ const WeatherInfos = ({
           <div className="info--temp">
             28<span className="sup">o</span>C
           </div>
-          <div>{`Sunny in ${city}, ${country}`}</div>
+          <div>{` ${city}, ${country}`}</div>
         </div>
-        <WeatherIcon statu="Clear" />
+        <WeatherIcon statu="HeavyRain" />
       </div>
       <table className="predictions">
         <tbody>
@@ -41,9 +41,12 @@ const WeatherInfos = ({
             return (
               <tr>
                 <td className="predictions--cell">{value?.day}</td>
-                <td className="predictions--cell">{value?.weather}</td>
+                <td className="predictions--cell predictions--cell-center">
+                  <WeatherIcon statu={value?.weather} />
+                </td>
                 <td className="predictions--cell predictions--cell-last">
                   {value?.temp}
+                  <span className="sup">o</span>C
                 </td>
               </tr>
             );

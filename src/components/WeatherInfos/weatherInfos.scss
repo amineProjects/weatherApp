@@ -24,6 +24,8 @@
 .info {
   display: flex;
   justify-content: space-between;
+  border-bottom: 2px solid #ffd87c;
+  padding-bottom: 0.5em;
   &--text {
     display: flex;
     flex-direction: column;
@@ -42,7 +44,18 @@
   padding-top: 1.5em;
   width: 100%;
   &--cell {
+    width: calc(100% / 3);
     padding-bottom: 1.5em;
+    & .info--icon {
+      height: 1em;
+      width: 2.5em;
+      display: block;
+    }
+    &-center {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
     &-last {
       text-align: right;
     }
