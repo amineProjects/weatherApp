@@ -279,6 +279,11 @@
     react-refresh "^0.11.0"
     resolve "^1.20.0"
 
+animated-weather-icon@^1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/animated-weather-icon/-/animated-weather-icon-1.0.10.tgz#7815ec7c0790c4acf69f630fb4fcdddfde862e81"
+  integrity sha512-sqQyMd7EQKaGCMiGHGnyQGMDpAgrHGVh7Q8QxWEao79M6pR3HTOJbuC5771PAXEgE9AJYnsLPIyy5GqnW/7pZg==
+
 ansi-styles@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-3.2.1.tgz#41fbb20243e50b12be0f04b8dedbf07520ce841d"

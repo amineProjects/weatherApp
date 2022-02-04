@@ -1,0 +1,55 @@
+.weather {
+  padding: 1.5em;
+  width: 30vw;
+  height: calc(100vh - 3em);
+  color: white;
+  @media screen and (max-width: 600px) {
+    width: 100vw;
+  }
+  &-sunny {
+    background-color: #ebbc4f;
+  }
+  &--btn {
+    background-color: white;
+    border: none;
+    font-size: 1.5em;
+    width: 100%;
+    padding: 0.25em;
+    margin-bottom: 0.75em;
+    color: #856212;
+    text-align: left;
+    border-radius: 0.5em;
+  }
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  &--text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &--temp {
+    font-size: 3em;
+  }
+  &--icon {
+    height: calc(100vh / 4.2);
+    width: 40%;
+  }
+}
+
+.predictions {
+  padding-top: 1.5em;
+  width: 100%;
+  &--cell {
+    padding-bottom: 1.5em;
+    &-last {
+      text-align: right;
+    }
+  }
+}
+.sup {
+  position: relative;
+  bottom: 1ex;
+  font-size: 70%;
+}

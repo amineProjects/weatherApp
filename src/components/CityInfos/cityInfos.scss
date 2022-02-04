@@ -1,13 +1,13 @@
 .cityInfos {
   width: 65vw;
-  height: 100vh;
-  background-color: #e3f6fe;
-  margin-right: 1em;
+  height: calc(100vh - 3em);
+  background-color: #fce57e;
   padding: 1.5em;
   &--title {
     text-transform: capitalize;
     font-weight: 700;
     margin-bottom: 0.3em;
+    color: rgb(255, 249, 242);
     & span {
       font-weight: 200;
     }
@@ -45,7 +45,7 @@
 }
 .map {
   border-radius: 1em;
-  height: calc(100vh / 2);
+  height: calc(100vh / 1.8);
   margin-top: 1em;
   background-position: center;
   background-repeat: no-repeat;
