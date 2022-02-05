@@ -1,25 +1,66 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import dayjs from "dayjs";
+
 import WeatherIcon from "./WeatherIcon";
+import { useFetchData } from "@/hooks/useFetchData";
+
 import "./weatherInfos.scss";
 
-const weatherPr = [
-  { day: "sunday", weather: "Clear", temp: "31" },
-  { day: "monday", weather: "Cloudy", temp: "31" },
-  { day: "tuesdya", weather: "Rain", temp: "31" },
-  { day: "wednesday", weather: "Drizzle", temp: "31" },
-  { day: "thursday", weather: "Overcast", temp: "31" },
-  { day: "friday", weather: "HeavyRain", temp: "31" },
-  { day: "saturday", weather: "Clear", temp: "31" },
-];
+const weatherStatus = {
+  Clouds: "Cloudy",
+};
 
-const WeatherInfos = ({
-  city = "berlin",
-  country = "germany",
-  infos = weatherPr,
-}) => {
+const WeatherInfos = ({ city = "berlin", country = "germany", cord }) => {
+  const data = useFetchData(cord, "weather");
+  const getInfos = (data) => {
+    if (!data) {
+      return { current: false, daily: false };
+    }
+    const {
+      current: { temp, dt, sunrise, sunset, weather },
+      daily,
+    } = data;
+    return {
+      current: {
+        day: dayjs(dt * 1000).format("dddd DD MMMM"),
+        weather: weatherStatus[weather[0].main]
+          ? weatherStatus[weather[0].main]
+          : weather[0].main,
+        sunrise,
+        sunset,
+        temp,
+      },
+      daily: daily.slice(1).map((value) => {
+        const { dt, temp, weather } = value;
+        return {
+          day: dayjs(dt * 1000).format("ddd DD MMM"),
+          temp: temp.day,
+          weather: weatherStatus[weather[0].main]
+            ? weatherStatus[weather[0].main]
+            : weather[0].main,
+          sunrise,
+          sunset,
+        };
+      }),
+    };
+  };
+  const { current, daily } = getInfos(data);
+  console.log("in weather infos", current, daily);
   const [openModal, setOpenModal] = useState(false);
-  const d = new Date();
-  let today = d.toLocaleDateString();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (current && daily) {
+      setIsLoading(false);
+    } else {
+      setIsLoading(true);
+    }
+  }, [current, daily, data]);
+
+  if (isLoading) {
+    return <div>...Loading</div>;
+  }
+
   return (
     <div className="weather weather-sunny">
       <button className="weather--btn" onClick={() => setOpenModal(true)}>
@@ -27,19 +68,20 @@ const WeatherInfos = ({
       </button>
       <div className="info">
         <div className="info--text">
-          <div>{d.toDateString()}</div>
+          <div>{current.day}</div>
           <div className="info--temp">
-            28<span className="sup">o</span>C
+            {current.temp}
+            <span className="sup">o</span>C
           </div>
           <div>{` ${city}, ${country}`}</div>
         </div>
-        <WeatherIcon statu="HeavyRain" />
+        <WeatherIcon statu={current.weather} />
       </div>
       <table className="predictions">
         <tbody>
-          {infos.map((value) => {
+          {daily.map((value) => {
             return (
-              <tr>
+              <tr key={value.day}>
                 <td className="predictions--cell">{value?.day}</td>
                 <td className="predictions--cell predictions--cell-center">
                   <WeatherIcon statu={value?.weather} />
