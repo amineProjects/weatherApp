@@ -4,8 +4,13 @@ const getWeatherApiUrl = ({ lat, lon, exclude = [], units = "metric" }) => {
   }`;
 };
 
+const getcitiesApiUrl = ({ text }) => {
+  return `https://api.teleport.org/api/cities/?search=${text}`;
+};
+
 const apiUrl = {
   weather: getWeatherApiUrl,
+  cities: getcitiesApiUrl,
 };
 
 export default apiUrl;

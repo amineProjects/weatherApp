@@ -8,15 +8,21 @@ import { getCurrentLocation } from "@/utils/geolocation";
 
 function App() {
   const [cord, setCord] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     if (!cord) {
       getCurrentLocation(setCord);
+    } else {
+      setIsLoading(false);
     }
-  }, []);
+  }, [cord]);
   console.log("in app", cord);
+  if (isLoading) {
+    return <div>... Loading</div>;
+  }
   return (
     <div className="App">
-      <CityInfos />
+      <CityInfos cord={cord} />
       <WeatherInfos cord={cord} />
     </div>
   );

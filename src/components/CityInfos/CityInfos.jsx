@@ -1,9 +1,11 @@
 // import React from "react";
 import "./cityInfos.scss";
+import Map from "@/components/Map";
 
 const CityInfos = ({
   country = "germany",
   city = "berlin",
+  cord,
   image = { src: "https://via.placeholder.com/1440x360.png" },
 }) => {
   return (
@@ -26,12 +28,7 @@ const CityInfos = ({
           </h4>
         </div>
       </div>
-      <div
-        className="map"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://via.placeholder.com/1440x480.png")`,
-        }}
-      ></div>
+      <Map cord={cord} />
     </div>
   );
 };
