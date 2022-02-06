@@ -10,7 +10,6 @@ const weatherStatus = {
   Clouds: "Cloudy",
   Thunderstorm: "ThunderStorm",
   Mist: "Fog",
-  Mist: "Fog",
   Smoke: "Fog",
   Haze: "Fog",
   Dust: "Fog",
