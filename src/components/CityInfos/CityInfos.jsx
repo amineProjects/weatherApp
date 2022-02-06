@@ -2,12 +2,12 @@
 import "./cityInfos.scss";
 import Map from "@/components/Map";
 
-const CityInfos = ({ cord }) => {
+const CityInfos = ({ cord, setOpenSelectCity }) => {
   return (
-    <div className="cityInfos">
-      <h1 className="cityInfos--title">
-        <span>weather</span> frocast
-      </h1>
+    <div className={`cityInfos cityInfos--sunny`}>
+      <button className="btn" onClick={() => setOpenSelectCity(true)}>
+        Change city
+      </button>
       <Map cord={cord} />
     </div>
   );

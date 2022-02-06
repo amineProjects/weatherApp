@@ -8,17 +8,12 @@ export const useFetchData = (args = null, apiName, condition) => {
   const [data, setData] = useState(null);
   useEffect(() => {
     if (!condition) return false;
-    if (apiName === "cities") {
-      fetch(apiUrl[apiName](args))
-        .then((response) => response.json())
-        .then((result) => {
-          console.log("in useFetchData", JSON.stringify(result, {}, 2));
-          setData(result);
-        });
-    } else {
-      console.log("in useFetchData");
-      setData(CHICAGO);
-    }
+    fetch(apiUrl[apiName](args))
+      .then((response) => response.json())
+      .then((result) => {
+        console.log("in useFetchData", JSON.stringify(result, {}, 2));
+        setData(result);
+      });
   }, [condition]);
 
   return data;

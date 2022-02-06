@@ -31,8 +31,8 @@ function App() {
   }
   return (
     <div className="App">
-      <WeatherInfos cord={info.cord} setOpenSelectCity={setOpenSelectCity} />
-      <CityInfos cord={info.cord} />
+      <WeatherInfos cord={info.cord} />
+      <CityInfos cord={info.cord} setOpenSelectCity={setOpenSelectCity} />
     </div>
   );
 }

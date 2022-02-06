@@ -10,7 +10,7 @@ const weatherStatus = {
   Clouds: "Cloudy",
 };
 
-const WeatherInfos = ({ cord, setOpenSelectCity }) => {
+const WeatherInfos = ({ cord }) => {
   const data = useFetchData(cord, "weather", cord.lat);
   const getInfos = (data) => {
     if (!data) {
@@ -63,9 +63,10 @@ const WeatherInfos = ({ cord, setOpenSelectCity }) => {
 
   return (
     <div className="weather weather-sunny">
-      <button className="btn" onClick={() => setOpenSelectCity(true)}>
-        Select another city
-      </button>
+      <h1 className="cityInfos--title">
+        <span>weather</span> forcast
+      </h1>
+
       <div className="info">
         <div className="info--text">
           <div>{current.day}</div>

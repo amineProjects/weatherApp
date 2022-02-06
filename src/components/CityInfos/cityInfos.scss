@@ -1,6 +1,5 @@
 .cityInfos {
-  width: 65vw;
-  height: calc(100vh - 3em);
+  width: 70vw;
   background-color: #fce57e;
   padding: 1.5em;
   &--title {
@@ -13,10 +12,9 @@
     }
   }
   @media screen and (max-width: 600px) {
-    display: none;
-  }
-  @media screen and (min-width: 601px) {
-    display: block;
+    background-color: #ebbc4f;
+    width: 100vw;
+    padding-top: 0;
   }
 }
 .hero {
@@ -32,7 +30,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    // backgroundColor: blue,
   }
   &--title {
     font-size: 3em;
