@@ -10,6 +10,7 @@ import storage from "@/utils/storage";
 function App() {
   const [info, setInfo] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [openSelectCity, setOpenSelectCity] = useState(false);
   useEffect(() => {
     if (info) {
       setIsLoading(false);
@@ -17,14 +18,21 @@ function App() {
       setInfo(storage.getItem("cityInfo"));
     }
   }, [info]);
+
   console.log("in app", info);
-  if (isLoading) {
-    return <Cities />;
+  if (isLoading || openSelectCity) {
+    return (
+      <Cities
+        setInfo={setInfo}
+        setOpenSelectCity={setOpenSelectCity}
+        openSelectCity={openSelectCity}
+      />
+    );
   }
   return (
     <div className="App">
+      <WeatherInfos cord={info.cord} setOpenSelectCity={setOpenSelectCity} />
       <CityInfos cord={info.cord} />
-      <WeatherInfos cord={info.cord} />
     </div>
   );
 }

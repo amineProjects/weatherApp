@@ -5,7 +5,7 @@ import { useFetchData } from "@/hooks/useFetchData";
 import { getCurrentLocation } from "@/utils/geolocation";
 import storage from "@/utils/storage";
 
-const Cities = () => {
+const Cities = ({ setOpenSelectCity, openSelectCity, setInfo }) => {
   const [value, setValue] = useState("");
   const [text, setText] = useState("");
   const items = useFetchData({ text }, "cities", text)?.["_embedded"][
@@ -15,7 +15,6 @@ const Cities = () => {
     label: item.matching_full_name,
   }));
   const onInputChange = (txt) => {
-    console.log(txt);
     setText(txt);
   };
 
@@ -25,15 +24,24 @@ const Cities = () => {
     const cityItem = item.value["_embedded"]["city:item"];
     const latlon = cityItem.location.latlon;
     storage.setItem("cityInfo", {
-      name: cityItem.full_name,
-      cord: { lan: latlon.latitude, lon: latlon.longitude },
-      imageUrl: `${cityItem["_links"]["city:urban_area"].href}images/`,
+      cord: { lat: latlon.latitude, lon: latlon.longitude },
     });
+
+    setInfo({
+      cord: { lat: latlon.latitude, lon: latlon.longitude },
+    });
+
+    setOpenSelectCity(false);
   };
 
   const onClick = () => {
-    const setCord = (id) => (data) => storage.setItem(id, { cord: data });
+    const setCord = (id) => (data) => {
+      storage.setItem(id, { cord: data });
+
+      setInfo({ cord: data });
+    };
     getCurrentLocation(setCord("cityInfo"));
+    setOpenSelectCity(false);
   };
 
   return (
