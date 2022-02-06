@@ -17,7 +17,12 @@ This is a project that show the weather forecast of a city and its location on t
 <details>
   <summary>Table of Contents</summary>
   <ol>
-<li><a href="#built-with">Built With</a></li>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -130,4 +135,4 @@ Project Link: [https://github.com/amineProjects/weatherApp](https://github.com/a
 [license-url]: https://github.com/amineProjects/weatherApp/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/mohammed-amine-benahmed-b7838917b/
-[product-screenshot]: static/images/screenshot.png
+[product-screenshot]: src/static/images/screenshot.png
