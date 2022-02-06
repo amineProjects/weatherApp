@@ -68,9 +68,9 @@ This is a project that show the weather forecast of a city and its location on t
    yarn install
    ```
 1. Create a `.env` file then enter your APIs keys
-   ```js
-   VITE_WEATHER_API_KEY = "Eenter your API key";
-   VITE_MAP_API_KEY = "Eenter your API key";
+   ```json
+   VITE_WEATHER_API_KEY = "Eenter your API key"
+   VITE_MAP_API_KEY = "Eenter your API key"
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
