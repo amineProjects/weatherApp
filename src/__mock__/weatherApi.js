@@ -102,9 +102,7 @@ export const CHICAGO = {
     visibility: 10000,
     wind_speed: 1.54,
     wind_deg: 240,
-    weather: [
-      { id: 800, main: "Clear", description: "clear sky", icon: "01d" },
-    ],
+    weather: [{ id: 800, main: "Fog", description: "clear sky", icon: "01d" }],
   },
   daily: [
     {

@@ -5,8 +5,26 @@
   @media screen and (max-width: 600px) {
     width: 100vw;
   }
-  &-sunny {
+  &-Clear {
     background-color: #ebbc4f;
+  }
+  &-Cloudy {
+    background-color: #585858;
+  }
+  &-Snow {
+    background-color: #a9a5aa;
+  }
+  &-Drizzle {
+    background-color: #627399;
+  }
+  &-ThunderStorm {
+    background-color: #2b1c57;
+  }
+  &-Rain {
+    background-color: #3b4b6f;
+  }
+  &-Fog {
+    background-color: #9fa5a8;
   }
 }
 

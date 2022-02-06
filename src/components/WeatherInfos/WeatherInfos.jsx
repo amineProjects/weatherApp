@@ -8,9 +8,19 @@ import "./weatherInfos.scss";
 
 const weatherStatus = {
   Clouds: "Cloudy",
+  Thunderstorm: "ThunderStorm",
+  Mist: "Fog",
+  Mist: "Fog",
+  Smoke: "Fog",
+  Haze: "Fog",
+  Dust: "Fog",
+  Sand: "Fog",
+  Ash: "Fog",
+  Squall: "Fog",
+  Tornado: "Fog",
 };
 
-const WeatherInfos = ({ cord }) => {
+const WeatherInfos = ({ cord, setCurrentWeather }) => {
   const data = useFetchData(cord, "weather", cord.lat);
   const getInfos = (data) => {
     if (!data) {
@@ -20,6 +30,11 @@ const WeatherInfos = ({ cord }) => {
       current: { temp, dt, sunrise, sunset, weather },
       daily,
     } = data;
+    setCurrentWeather(
+      weatherStatus[weather[0].main]
+        ? weatherStatus[weather[0].main]
+        : weather[0].main
+    );
     return {
       current: {
         day: dayjs(dt * 1000).format("dddd DD MMMM"),
@@ -62,7 +77,7 @@ const WeatherInfos = ({ cord }) => {
   }
 
   return (
-    <div className="weather weather-sunny">
+    <div className={`weather weather-${current?.weather}`}>
       <h1 className="cityInfos--title">
         <span>weather</span> forcast
       </h1>

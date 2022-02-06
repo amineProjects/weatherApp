@@ -11,6 +11,7 @@ function App() {
   const [info, setInfo] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [openSelectCity, setOpenSelectCity] = useState(false);
+  const [currentWeather, setCurrentWeather] = useState("Clear");
   useEffect(() => {
     if (info) {
       setIsLoading(false);
@@ -31,8 +32,12 @@ function App() {
   }
   return (
     <div className="App">
-      <WeatherInfos cord={info.cord} />
-      <CityInfos cord={info.cord} setOpenSelectCity={setOpenSelectCity} />
+      <WeatherInfos cord={info.cord} setCurrentWeather={setCurrentWeather} />
+      <CityInfos
+        cord={info.cord}
+        setOpenSelectCity={setOpenSelectCity}
+        currentWeather={currentWeather}
+      />
     </div>
   );
 }
