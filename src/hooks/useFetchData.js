@@ -3,10 +3,11 @@ import React, { useEffect, useState } from "react";
 import apiUrl from "@/config";
 import { CHICAGO, ORAN } from "@/__mock__/weatherApi";
 
-export const useFetchData = (args = null, apiName) => {
+export const useFetchData = (args = null, apiName, condition) => {
+  console.log("in useFetchData", args);
   const [data, setData] = useState(null);
   useEffect(() => {
-    if (!args) return false;
+    if (!condition) return false;
     if (apiName === "cities") {
       fetch(apiUrl[apiName](args))
         .then((response) => response.json())
@@ -18,7 +19,7 @@ export const useFetchData = (args = null, apiName) => {
       console.log("in useFetchData");
       setData(CHICAGO);
     }
-  }, [args]);
+  }, [condition]);
 
   return data;
 };

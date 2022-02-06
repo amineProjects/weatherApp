@@ -10,8 +10,8 @@ const weatherStatus = {
   Clouds: "Cloudy",
 };
 
-const WeatherInfos = ({ city = "berlin", country = "germany", cord }) => {
-  const data = useFetchData(cord, "weather");
+const WeatherInfos = ({ cord }) => {
+  const data = useFetchData(cord, "weather", cord.lat);
   const getInfos = (data) => {
     if (!data) {
       return { current: false, daily: false };
@@ -63,7 +63,7 @@ const WeatherInfos = ({ city = "berlin", country = "germany", cord }) => {
 
   return (
     <div className="weather weather-sunny">
-      <button className="weather--btn" onClick={() => setOpenModal(true)}>
+      <button className="btn" onClick={() => setOpenModal(true)}>
         Select another city
       </button>
       <div className="info">
@@ -73,7 +73,6 @@ const WeatherInfos = ({ city = "berlin", country = "germany", cord }) => {
             {current.temp}
             <span className="sup">o</span>C
           </div>
-          <div>{` ${city}, ${country}`}</div>
         </div>
         <WeatherIcon statu={current.weather} />
       </div>

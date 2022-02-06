@@ -1,0 +1,30 @@
+.cities {
+  //   height: 100vh;
+  padding: 5vh 0;
+  background-color: #ffec99;
+  @media screen and (max-width: 600px) {
+    padding: 0;
+  }
+  &--content {
+    background-color: #ebbc4f;
+    width: calc(100vw / 3);
+    height: 90vh;
+    margin: 0 auto;
+    border-radius: 0.5em;
+    padding: 0 3em;
+    @media screen and (max-width: 600px) {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      padding: 2em;
+    }
+    & .cityInfos--title {
+      margin-bottom: 1em;
+      text-align: center;
+    }
+  }
+  &--text {
+    margin-bottom: 1.2em;
+    color: white;
+  }
+}

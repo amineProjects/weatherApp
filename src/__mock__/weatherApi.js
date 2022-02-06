@@ -1,3 +1,88 @@
+const city = {
+  _embedded: {
+    "city:item": {
+      _links: {
+        "city:admin1_division": {
+          href: "https://api.teleport.org/api/countries/iso_alpha2:JP/admin1_divisions/geonames:32/",
+          name: "Ōsaka",
+        },
+        "city:alternate-names": {
+          href: "https://api.teleport.org/api/cities/geonameid:1853909/alternate_names/",
+        },
+        "city:country": {
+          href: "https://api.teleport.org/api/countries/iso_alpha2:JP/",
+          name: "Japan",
+        },
+        "city:timezone": {
+          href: "https://api.teleport.org/api/timezones/iana:Asia%2FTokyo/",
+          name: "Asia/Tokyo",
+        },
+        "city:urban_area": {
+          href: "https://api.teleport.org/api/urban_areas/slug:osaka/",
+          name: "Osaka",
+        },
+        self: {
+          href: "https://api.teleport.org/api/cities/geonameid:1853909/",
+        },
+      },
+      full_name: "Osaka, Ōsaka, Japan",
+      geoname_id: 1853909,
+      location: {
+        geohash: "xn0m77v9ttus3s30qjsx",
+        latlon: {
+          latitude: 34.69374,
+          longitude: 135.50218,
+        },
+      },
+      name: "Osaka",
+      population: 2592413,
+    },
+  },
+  _links: {
+    "city:item": {
+      href: "https://api.teleport.org/api/cities/geonameid:1853909/",
+    },
+  },
+  matching_alternate_names: [
+    {
+      name: "Osaca - da ban shi",
+    },
+    {
+      name: "Oszaka",
+    },
+    {
+      name: "Osaka",
+    },
+    {
+      name: "Osaka-shi",
+    },
+    {
+      name: "Osaca",
+    },
+    {
+      name: "OSA",
+    },
+    {
+      name: "Osaca - 大阪市",
+    },
+    {
+      name: "Osaacke",
+    },
+    {
+      name: "osaka",
+    },
+    {
+      name: "oosakashi",
+    },
+    {
+      name: "Osako",
+    },
+    {
+      name: "osaka si",
+    },
+  ],
+  matching_full_name: "Osaka, Ōsaka, Japan",
+};
 export const CHICAGO = {
   lat: 33.44,
   lon: -94.04,

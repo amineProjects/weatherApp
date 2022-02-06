@@ -13,7 +13,7 @@ const CityInfos = ({
       <h1 className="cityInfos--title">
         <span>weather</span> frocast
       </h1>
-      <div
+      {/* <div
         className="hero"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${image.src})`,
@@ -27,7 +27,7 @@ const CityInfos = ({
             {country}
           </h4>
         </div>
-      </div>
+      </div> */}
       <Map cord={cord} />
     </div>
   );

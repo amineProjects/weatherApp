@@ -8,7 +8,7 @@ export const getCurrentLocation = (setCord) => {
   const success = (pos) => {
     const crd = pos.coords;
 
-    console.log("Your current position is:");
+    console.log("Your current position is:", pos);
     console.log(`Latitude : ${crd.latitude}`);
     console.log(`Longitude: ${crd.longitude}`);
     setCord({ lat: crd.latitude, lon: crd.longitude });

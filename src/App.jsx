@@ -2,28 +2,29 @@ import { useEffect, useState } from "react";
 
 import "./App.scss";
 
+import Cities from "@/components/Cities";
 import CityInfos from "@/components/CityInfos";
 import WeatherInfos from "@/components/WeatherInfos";
-import { getCurrentLocation } from "@/utils/geolocation";
+import storage from "@/utils/storage";
 
 function App() {
-  const [cord, setCord] = useState(null);
+  const [info, setInfo] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    if (!cord) {
-      getCurrentLocation(setCord);
-    } else {
+    if (info) {
       setIsLoading(false);
+    } else {
+      setInfo(storage.getItem("cityInfo"));
     }
-  }, [cord]);
-  console.log("in app", cord);
+  }, [info]);
+  console.log("in app", info);
   if (isLoading) {
-    return <div>... Loading</div>;
+    return <Cities />;
   }
   return (
     <div className="App">
-      <CityInfos cord={cord} />
-      <WeatherInfos cord={cord} />
+      <CityInfos cord={info.cord} />
+      <WeatherInfos cord={info.cord} />
     </div>
   );
 }

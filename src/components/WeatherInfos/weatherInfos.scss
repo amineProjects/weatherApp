@@ -9,18 +9,20 @@
   &-sunny {
     background-color: #ebbc4f;
   }
-  &--btn {
-    background-color: white;
-    border: none;
-    font-size: 1.5em;
-    width: 100%;
-    padding: 0.25em;
-    margin-bottom: 0.75em;
-    color: #856212;
-    text-align: left;
-    border-radius: 0.5em;
-  }
 }
+
+.btn {
+  background-color: white;
+  border: none;
+  font-size: 1.5em;
+  width: 100%;
+  padding: 0.25em;
+  margin-bottom: 0.75em;
+  color: #856212;
+  text-align: left;
+  border-radius: 0.5em;
+}
+
 .info {
   display: flex;
   justify-content: space-between;
@@ -29,7 +31,7 @@
   &--text {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
   }
   &--temp {
     font-size: 3em;
