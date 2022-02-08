@@ -72,7 +72,11 @@ const WeatherInfos = ({ cord, setCurrentWeather }) => {
   }, [current, daily, data]);
 
   if (isLoading) {
-    return <div>...Loading</div>;
+    return (
+      <div className="weather weather-Clear weather--loading">
+        <WeatherIcon statu="Clear" />
+      </div>
+    );
   }
 
   return (

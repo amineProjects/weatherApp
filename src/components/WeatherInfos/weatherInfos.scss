@@ -26,6 +26,13 @@
   &-Fog {
     background-color: #9fa5a8;
   }
+
+  &--loading {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+  }
 }
 
 .btn {
